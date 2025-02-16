@@ -1,6 +1,5 @@
-// utils/scraper.js
 import axios from "axios";
-import * as cheerio from "cheerio";  // Changed import statement
+import * as cheerio from "cheerio";
 import { URL } from "url";
 
 export const getWordCount = async (url) => {
@@ -8,7 +7,7 @@ export const getWordCount = async (url) => {
     const { data } = await axios.get(url);
     const $ = cheerio.load(data);
     const text = $("body").text().replace(/\s+/g, " ").trim();
-    const words = text.split(" ").filter(word => word.length > 0);
+    const words = text.split(" ").filter((word) => word.length > 0);
     return words.length;
   } catch (error) {
     console.error("Word count error:", error.message);
@@ -24,7 +23,6 @@ export const extractLinks = async (url) => {
     const webLinks = new Set();
     const mediaLinks = new Set();
 
-    // Collect web links
     $("a").each((_, element) => {
       try {
         const href = $(element).attr("href");
@@ -37,7 +35,6 @@ export const extractLinks = async (url) => {
       }
     });
 
-    // Collect media links
     $("img, video, audio, source").each((_, element) => {
       try {
         const src = $(element).attr("src");

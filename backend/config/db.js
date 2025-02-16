@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
-const uri=process.env.MONGO_URI
+const uri = process.env.MONGO_URI;
 
 const connectDB = () => {
   mongoose
     .connect(uri, { dbName: "Word_count" })
-    .then((data) => {
+    .then(() => {
       console.log("Connected to Database");
     })
     .catch((error) => {

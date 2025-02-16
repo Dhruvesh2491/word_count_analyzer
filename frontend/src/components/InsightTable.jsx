@@ -34,7 +34,6 @@ const InsightTable = () => {
 
   if (loading) return <div>Loading...</div>;
 
-  // Pagination Logic
   const totalPages = Math.ceil(insights.length / itemsPerPage);
   const paginatedInsights = insights.slice(
     (currentPage - 1) * itemsPerPage,
@@ -118,7 +117,6 @@ const InsightTable = () => {
         </tbody>
       </Table>
 
-      {/* Pagination Section */}
       <div className="d-flex justify-content-center mt-3">
         <Button
           variant="secondary"
@@ -128,7 +126,6 @@ const InsightTable = () => {
           Previous
         </Button>
 
-        {/* Numeric Pagination */}
         {Array.from({ length: totalPages }, (_, index) => (
           <Button
             key={index + 1}

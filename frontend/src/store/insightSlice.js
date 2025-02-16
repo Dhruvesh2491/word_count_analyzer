@@ -9,7 +9,10 @@ import {
 export const getInsights = createAsyncThunk("insights/get", fetchInsights);
 export const createInsight = createAsyncThunk("insights/create", addInsight);
 export const removeInsight = createAsyncThunk("insights/remove", deleteInsight);
-export const markFavorite = createAsyncThunk("insights/favorite", toggleFavorite);
+export const markFavorite = createAsyncThunk(
+  "insights/favorite",
+  toggleFavorite
+);
 
 const insightSlice = createSlice({
   name: "insights",
@@ -27,11 +30,16 @@ const insightSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(removeInsight.fulfilled, (state, action) => {
-        state.insights = state.insights.filter((i) => i._id !== action.meta.arg);
+        state.insights = state.insights.filter(
+          (i) => i._id !== action.meta.arg
+        );
       })
       .addCase(markFavorite.fulfilled, (state, action) => {
-        const index = state.insights.findIndex((i) => i._id === action.payload._id);
-        if (index !== -1) state.insights[index].favorite = action.payload.favorite;
+        const index = state.insights.findIndex(
+          (i) => i._id === action.payload._id
+        );
+        if (index !== -1)
+          state.insights[index].favorite = action.payload.favorite;
       });
   },
 });
