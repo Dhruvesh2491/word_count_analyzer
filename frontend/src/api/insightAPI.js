@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/insights";
+const API_URL = "https://word-count-analyzer.onrender.com/api/insights";
 
 export const fetchInsights = async () => {
   const response = await axios.get(API_URL);

@@ -1,7 +1,7 @@
 import cors from "cors";
 
 const corsOptions = {
-  origin: "http://localhost:5173", 
+  origin: "https://word-count-analyzer.onrender.com", 
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: ["Content-Type", "Authorization"],
 };
