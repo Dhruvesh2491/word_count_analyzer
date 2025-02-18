@@ -42,7 +42,7 @@ const InsightTable = () => {
 
   return (
     <div>
-      <Table responsive bordered className="mt-4" style={{ width: "100vw"}}>
+      <Table responsive bordered className="mt-4" style={{ width: "70vw"}}>
         <thead>
           <tr>
             <th>Domain Name</th>
