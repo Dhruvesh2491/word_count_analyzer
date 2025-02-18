@@ -7,7 +7,7 @@ const Home = () => {
     <Container className="py-4">
       <h1 className="mb-4">Webpage Scraper</h1>
       <URLInput />
-      <Card className="mt-4" style={{ width: "97vw" }}>
+      <Card className="mt-4" style={{ width: "100vw" }}>
         <h2 className="text-center">Results</h2>
         <InsightTable />
       </Card>
