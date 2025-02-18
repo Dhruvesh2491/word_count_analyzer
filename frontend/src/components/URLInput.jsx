@@ -26,7 +26,7 @@ const URLInput = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit} className="mt-4" style={{ width: "100vw" }}>
+    <Form onSubmit={handleSubmit} className="mt-4" style={{ width: "70vw" }}>
       <Form.Group className="mb-3">
         <Form.Control
           type="url"
